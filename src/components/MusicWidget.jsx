@@ -8,13 +8,14 @@ const AUDIO_SRC = '/music.m4a';
 export default function MusicWidget() {
   const audioRef = useRef(null);
   const [muted, setMuted] = useState(() => localStorage.getItem('wc-music-muted') === 'true');
-  const [started, setStarted] = useState(() => localStorage.getItem('wc-music-muted') === 'true');
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.loop = true;
     audio.volume = 0.3;
+    audio.muted = muted;
 
     const tryPlay = () => {
       audio.play().then(() => setStarted(true)).catch(() => {
@@ -80,7 +81,7 @@ export default function MusicWidget() {
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-[10px] font-inter text-[#7A7060] bg-white/80 backdrop-blur px-2 py-1 rounded-full border border-[rgba(107,142,107,0.2)] shadow-sm"
+          className="text-[10px] font-inter text-[var(--text-muted)] bg-white/80 backdrop-blur px-2 py-1 rounded-full border border-[rgba(107,142,107,0.2)] shadow-sm"
         >
           Tap to play music
         </motion.span>
@@ -88,3 +89,5 @@ export default function MusicWidget() {
     </motion.div>
   );
 }
+
+

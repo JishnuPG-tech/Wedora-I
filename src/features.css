@@ -16,8 +16,10 @@ body.dark-mode {
   --bg-main: #1a1a1a;
   --glass-bg: rgba(30, 28, 24, 0.85);
   --text-dark: #EDE8DF;
+  --cream: rgba(35, 32, 28, 0.7);
   --text-muted: #A09080;
   --pearl: rgba(35, 32, 28, 0.9);
+  --ivory: rgba(35, 32, 28, 0.9);
   background: #1a1a1a !important;
 }
 body.dark-mode .glass-card {
@@ -94,3 +96,5 @@ body.dark-mode section {
   animation: skeleton-wave 1.4s ease-in-out infinite;
   border-radius: 8px;
 }
+
+
