@@ -170,6 +170,32 @@ export default function RSVPForm() {
             )}
           </AnimatePresence>
         </motion.div>
+
+        {/* Developer credit footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-8 flex flex-col items-center justify-center w-full"
+        >
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#B8913A] to-transparent opacity-40 mb-4" />
+          <p className="font-cormorant italic text-sm text-[#7A7060] mb-3 text-center">
+            Made with love for {weddingData.couple.groom} {weddingData.couple.ampersand} {weddingData.couple.bride}
+          </p>
+          <a
+            href="mailto:jishnupg2005@gmail.com"
+            className="group flex flex-col items-center gap-1.5 px-6 py-3 rounded-2xl border border-transparent hover:border-[rgba(184,145,58,0.2)] hover:bg-[rgba(255,255,255,0.4)] transition-all duration-300"
+            style={{ textDecoration: 'none' }}
+          >
+            <p className="font-inter text-[9.5px] uppercase tracking-[0.25em] text-[#7A7060] opacity-80">
+              Crafted by <span className="font-semibold text-[#B8913A] tracking-[0.1em] group-hover:text-[#9A7A30] transition-colors">Jishnu P G</span>
+            </p>
+            <p className="font-inter text-[8.5px] lowercase tracking-[0.15em] text-[#7A7060] opacity-50 group-hover:opacity-90 transition-opacity flex items-center gap-2">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              jishnupg2005@gmail.com
+            </p>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
